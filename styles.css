@@ -1,0 +1,124 @@
+:root{
+  --bg:#090d20;
+  --panel:#111831;
+  --panel-2:#151e3d;
+  --line:rgba(255,255,255,.09);
+  --text:#f8fbff;
+  --muted:#95a0bf;
+  --lime:#c7ff36;
+  --lime-2:#9df01a;
+  --cyan:#74d8ff;
+  --danger:#ff8c9a;
+  --shadow:0 24px 80px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 15% 5%, rgba(92,114,255,.16), transparent 30%),
+    radial-gradient(circle at 88% 24%, rgba(199,255,54,.10), transparent 24%),
+    var(--bg);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+button,input,select{font:inherit}
+button{cursor:pointer}
+
+.app-shell{min-height:100vh;display:flex;flex-direction:column}
+.topbar{
+  width:min(1180px,calc(100% - 36px));
+  margin:0 auto;
+  padding:22px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}
+.brand-mark{
+  width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(145deg,#baff35,#78d917);color:#0a101c;font-weight:800;font-size:21px;
+  box-shadow:0 10px 24px rgba(160,245,35,.17);
+}
+.brand strong{display:block;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:18px;letter-spacing:-.02em}
+.brand small{display:block;color:var(--muted);font-size:11px;margin-top:1px}
+.top-actions{display:flex;align-items:center;gap:10px}
+.live-pill{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.035);color:#ced6eb;font-size:12px}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px rgba(199,255,54,.85)}
+.install-btn{border:1px solid rgba(199,255,54,.34);border-radius:11px;padding:10px 13px;color:#dfff9e;background:rgba(199,255,54,.08);font-weight:700}
+.install-btn:hover{background:rgba(199,255,54,.14)}
+
+.main-content{width:min(980px,calc(100% - 36px));margin:20px auto 0;flex:1}
+.hero-copy{max-width:680px;padding:42px 0 26px}
+.eyebrow,.section-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#aeb9d6;font-weight:700}
+.hero-copy h1{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(38px,6vw,66px);line-height:.98;letter-spacing:-.055em;margin:15px 0 18px}
+.hero-copy h1 span{color:var(--lime)}
+.hero-copy p{max-width:590px;margin:0;color:var(--muted);line-height:1.7;font-size:15px}
+
+.converter-card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(20,28,58,.97),rgba(13,18,39,.98));border:1px solid rgba(255,255,255,.10);border-radius:26px;padding:26px;box-shadow:var(--shadow)}
+.converter-card:before{content:"";position:absolute;inset:auto -80px -160px auto;width:360px;height:360px;background:radial-gradient(circle,rgba(199,255,54,.10),transparent 68%);pointer-events:none}
+.converter-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:23px}
+.converter-head h2{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:6px 0 0;font-size:25px;letter-spacing:-.03em}
+.swap-btn{width:44px;height:44px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.04);color:#eef3ff;font-size:22px;transition:.2s ease}
+.swap-btn:hover{transform:rotate(180deg);background:rgba(255,255,255,.08)}
+.converter-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(170px,.9fr);gap:15px;align-items:end}
+.money-field,.currency-field{display:block}
+.field-label{display:block;color:#aeb9d6;font-size:12px;font-weight:600;margin:0 0 8px}
+.amount-control{height:74px;border:1px solid rgba(255,255,255,.10);border-radius:17px;background:rgba(5,9,25,.55);display:flex;align-items:center;padding:0 18px;transition:border .2s,box-shadow .2s}
+.amount-control:focus-within{border-color:rgba(199,255,54,.50);box-shadow:0 0 0 4px rgba(199,255,54,.07)}
+.currency-symbol{flex:0 0 auto;display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:rgba(199,255,54,.10);color:var(--lime);font-weight:800;margin-right:10px}
+.amount-control input{width:100%;border:0;outline:0;background:transparent;color:white;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:28px;font-weight:600;letter-spacing:-.03em;min-width:0}
+.amount-control input::placeholder{color:#59627d}
+.select-wrap{position:relative}
+.select-wrap:after{content:'⌄';position:absolute;right:14px;top:50%;transform:translateY(-52%);color:#adb7d2;pointer-events:none;font-size:17px}
+select{width:100%;height:74px;padding:0 43px 0 16px;border-radius:17px;border:1px solid rgba(255,255,255,.10);outline:0;background:rgba(5,9,25,.55);color:#fff;appearance:none;cursor:pointer}
+select:focus{border-color:rgba(199,255,54,.50);box-shadow:0 0 0 4px rgba(199,255,54,.07)}
+.equal-sign{display:none}
+.result-control{background:linear-gradient(135deg,rgba(199,255,54,.09),rgba(255,255,255,.035))}
+.result-output{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:27px;font-weight:700;letter-spacing:-.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.rate-strip{margin-top:18px;padding:15px 16px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.025);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.rate-main{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;color:#b9c3dc;font-size:13px}
+.rate-main strong{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#fff;font-size:17px}
+.rate-main b{color:#dfe7fb}
+.rate-meta{display:flex;align-items:center;gap:10px;color:#7f8aa6;font-size:11px;white-space:nowrap}
+.refresh-btn{border:0;background:transparent;color:#b9c3dc;width:27px;height:27px;font-size:18px;border-radius:50%}
+.refresh-btn:hover{background:rgba(255,255,255,.06);color:var(--lime)}
+
+.quick-cards{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
+.quick-chip{border:1px solid var(--line);background:rgba(255,255,255,.025);color:#bec7dd;border-radius:999px;padding:8px 12px;font-size:12px}
+.quick-chip:hover{border-color:rgba(199,255,54,.34);color:#eff8ce;background:rgba(199,255,54,.06)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:34px}
+.info-card{display:flex;gap:13px;padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)}
+.info-icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(116,216,255,.08);color:var(--cyan);flex:0 0 auto}
+.info-card strong{display:block;font-size:13px}
+.info-card p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.55}
+.disclaimer{color:#66718d;font-size:11px;text-align:center;line-height:1.6;margin:28px auto 10px;max-width:700px}
+.footer{width:min(980px,calc(100% - 36px));margin:0 auto;padding:22px 0 26px;display:flex;justify-content:center;gap:8px;color:#66718d;font-size:11px}
+
+[data-state="loading"] .result-output{opacity:.55}
+.loading-spin{display:inline-block;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:720px){
+  .topbar{width:min(100% - 24px,980px);padding:16px 0}
+  .top-actions .live-pill{display:none}
+  .main-content{width:min(100% - 24px,980px);margin-top:5px}
+  .hero-copy{padding:34px 0 20px}
+  .hero-copy h1{font-size:44px;line-height:1.0}
+  .converter-card{padding:18px;border-radius:21px}
+  .converter-grid{grid-template-columns:1fr}
+  .equal-sign{display:grid;place-items:center;color:#72809f;font-size:18px;height:10px;margin:-2px 0 2px}
+  .amount-control,select{height:68px}
+  .amount-control input,.result-output{font-size:24px}
+  .info-grid{grid-template-columns:1fr}
+  .rate-strip{align-items:flex-start;flex-direction:column}
+  .rate-meta{width:100%;justify-content:space-between}
+}
+@media (max-width:390px){
+  .brand small{display:none}
+  .hero-copy h1{font-size:39px}
+  .hero-copy p{font-size:14px}
+  .install-btn{padding:9px 10px;font-size:12px}
+}
